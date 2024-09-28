@@ -5,7 +5,7 @@
 
 class Element {};
 
-using local_matrix = std::array<std::array<double, 2>, 2>;
+using local_matrix = std::vector<std::vector<double>>;
 
 class Fem {
 private:
