@@ -18,10 +18,14 @@ private:
     std::vector<std::vector<double>> stiffness_matrix_;
     std::vector<double> free_p_;
     std::vector<local_matrix> local_matrixes_;
+    std::vector<double> result_;
+    void CreateLocalMatrix(int a, int b, int c);
 public:
     Fem(int n, int x0, int xk): n_(n), begin_x_(x0), end_x_(xk), len_(xk-x0) {};
     const int GetBegin() const;
     const int GetEnd() const;
     const int GetLen() const;
+    const std::vector<double> GetResult() const;
     void Assembly();
+    void Solve(int a, int b, int c);
 };

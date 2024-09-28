@@ -11,11 +11,10 @@ void thomas_method(const std::vector<std::vector<double>>& matrix, const std::ve
         double y = (matrix[i][i - 1] * alpha[i - 1] +  matrix[i][i]);
         alpha[i] = -matrix[i][i + 1] / y;
         beta[i] = (c[i] - matrix[i][i - 1] * beta [i - 1]) / y;
-        //std::cout << alpha[i] << ' ' << beta[i] << std::endl;
     }
     solve[n] = (c[n] - matrix[n][n - 1] * beta[n - 1]) / (matrix[n][n - 1] * alpha[n - 1] +  matrix[n][n]);
     for (int i = n - 1; i >= 0; i--) {
         solve[i] = alpha[i] * solve[i + 1] + beta[i];
     }
- 
+
 }

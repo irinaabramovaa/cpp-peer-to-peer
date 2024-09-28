@@ -15,8 +15,6 @@ int main() {
     std::cin >> x_k;
     std::cin >> n;
     int start = 0;
-    // int end = 20;
-    // int x = rand() % (end - start + 1) + start;
     int a = rand() % (110 - 1 + 1) + 1;
     int b = rand() % (61 + 77 + 1) - 77;
     int c = (b == 0) ? rand() % (10 + 31 + 1) - 31 : 0;
@@ -27,7 +25,8 @@ int main() {
         b = 0;
 
     Fem fem_system(n, x_0, x_k);
-    
+    fem_system.Solve(a, b, c);
+    auto result = fem_system.GetResult();
 
     return 0;
 }
