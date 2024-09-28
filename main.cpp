@@ -1,9 +1,16 @@
 #include <iostream>
 #include <ctime>
 #include <random>
+#include <fstream>
 
 #include "element.h"
 
+template <typename T>
+void output(std::vector<T> result, std::ofstream& out) {
+    for (int i = 0; i < result.size(), i++) {
+        out << result[i] << std::endl;
+    }
+}
 
 //организовать ввод ГУ через конфиг файл (json|txt) + скрипт, проверяющий корректность
 int main() {
@@ -26,6 +33,11 @@ int main() {
     Fem fem_system(n, x_0, x_k);
     fem_system.Solve(a, b, c);
     auto result = fem_system.GetResult();
+
+    std::ofstream res;
+    res.open("result.csv");
+    output(result, res);
+    
 
     return 0;
 }
