@@ -16,5 +16,4 @@ void thomas_method(const std::vector<std::vector<double>>& matrix, const std::ve
     for (int i = n - 1; i >= 0; i--) {
         solve[i] = alpha[i] * solve[i + 1] + beta[i];
     }
-
 }

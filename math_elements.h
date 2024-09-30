@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-
+#include <iostream>
 
 void thomas_method(const std::vector<std::vector<double>>& matrix, const std::vector<double>& c, std::vector<double>& solve);
 template <typename f, typename s>
